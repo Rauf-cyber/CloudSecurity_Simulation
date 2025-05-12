@@ -76,12 +76,3 @@ This project gave me practical, hands-on experience in deploying secure and mana
 
 
 
-<!--
- ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
---!>
