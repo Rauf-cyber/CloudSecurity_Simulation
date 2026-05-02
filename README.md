@@ -14,7 +14,6 @@
   <img src="https://img.shields.io/badge/Status-Actively%20Improving-success?style=flat-square" />
 </p>
 
----
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&height=200&text=Cloud%20Security%20Engineer%20Portfolio&fontAlign=50&fontAlignY=40&color=0:0ea5e9,100:111827&fontColor=ffffff" alt="Cloud Security Portfolio Banner"/>
