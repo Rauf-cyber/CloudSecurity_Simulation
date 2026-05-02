@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-05-02T00:00:00Z",
+  "account_id": "123456789012",
+  "findings": [
+    {
+      "identity_type": "User",
+      "identity_name": "dev-automation",
+      "severity": "high",
+      "issue": "Wildcard action detected",
+      "details": {
+        "policy_name": "DevAutomationPolicy",
+        "action": "*",
+        "resource": "*"
+      }
+    }
+  ],
+  "summary": {
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "total": 1
+  }
+}

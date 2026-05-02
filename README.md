@@ -1,78 +1,47 @@
-<h1> Cloud Security Project – AWS CloudFormation & S3 Management </h1>
+<h1> Cloud Security Portfolio – AWS, Terraform, IAM Auditing, and Container Security </h1>
 
-
-<h2>Description</h2>
-This project reflects my personal experience working with AWS to automate infrastructure and improve cloud security practices using AWS CloudFormation, Amazon S3, and EC2 services. I focused on creating, updating, and tearing down cloud resources through infrastructure-as-code (IaC) methods while ensuring secure and scalable deployment.
+<h2>Overview</h2>
+This repository now contains multiple hands-on cloud security projects that demonstrate practical skills across infrastructure-as-code, identity hardening, logging/monitoring, and DevSecOps automation.
 <br />
 
+## 🚀 Projects Included
 
-<h2>Key Tasks Performed</h2>
+### 1) AWS CloudFormation & S3 Management (Existing Project)
+A project focused on deploying and managing AWS infrastructure with CloudFormation, including stack create/update/delete lifecycle and EC2 web deployment.
 
-- <b>✅ Task 1: Create an S3 Bucket Using AWS CloudFormation</b>
+- **Skills:** CloudFormation, S3, EC2, VPC, IaC
+- **Path:** repository root documentation + screenshots
 
-I launched a CloudFormation stack that provisioned an S3 bucket automatically.
+### 2) IAM Least-Privilege Audit (Python + Boto3)
+Automated IAM assessment script that detects wildcard permissions, high-risk action namespaces, missing MFA, and old access keys.
 
-<p align="center">
-  <img src="https://i.imgur.com/zteEDBE.png" alt="Screenshot description" width="80%" />
-</p>
+- **Skills:** IAM policy analysis, Python automation, security reporting
+- **Path:** `projects/iam-least-privilege-audit/`
+- **Main file:** `projects/iam-least-privilege-audit/audit_iam.py`
 
-- 📁 <b> Task 2: Delete the Stack and Verify Deletion</b>
+### 3) AWS Security Baseline (Terraform)
+Terraform baseline to provision core cloud detection controls and secure logging storage.
 
-I deleted the stack using CloudFormation and confirmed that the associated S3 bucket was removed.
+- **Includes:** encrypted S3 log bucket, CloudTrail, GuardDuty, AWS Config recorder
+- **Skills:** Terraform, governance controls, audit-readiness
+- **Path:** `projects/aws-security-baseline-terraform/`
 
-<p align="center">
-  <img src="https://i.imgur.com/19xuVJM.png" alt="Screenshot description" width="80%" />
-</p>
+### 4) Container Security CI Pipeline (GitHub Actions + Trivy)
+DevSecOps pipeline that builds a container image, scans for vulnerabilities, and fails CI on high/critical findings.
 
-- <b> 📥 Task 3: Use a Different Template to Re-Create Stack</b>
-  
-I tested a modified CloudFormation template to recreate the infrastructure and observed how changes impacted the deployment.
+- **Skills:** container scanning, CI/CD policy enforcement, SARIF upload
+- **Path:** `projects/container-security-ci/`
+- **Workflow:** `.github/workflows/container-security.yml`
 
-<p align="center">
-  <img src="https://i.imgur.com/D7R54vi.png" alt="Screenshot description" width="80%" />
-</p>
-<p align="center">
-  <img src="https://i.imgur.com/NhH28wN.png" alt="Screenshot description" width="80%" />
-</p>
+## 💡 Why this looks technically strong on GitHub
 
-- <b> 🌐 Task 4: Provision a Web Application</b>
-  
-I provisioned an EC2 instance with outputs including VPC and public subnet information. The web server was accessible via the URL output in CloudFormation.
+- Shows **breadth** (CloudFormation, Terraform, Python, CI security)
+- Shows **security depth** (IAM least privilege, vulnerability gates, monitoring controls)
+- Shows **real engineering workflow** (automation + evidence/report artifacts)
 
-<p align="center">
-  <img src="https://i.imgur.com/6WnI1RD.png" alt="Screenshot description" width="80%" />
-</p>
+## 📌 Next upgrade ideas
 
-<p align="center">
-  <img src="https://i.imgur.com/bJSZdB3.png" alt="Screenshot description" width="80%" />
-</p>
-
-<p align="center">
-  <img src="https://i.imgur.com/cEGx4Le.png" alt="Screenshot description" width="80%" />
-</p>
-
-- <b> 🔁 Task 5: Update Existing Stack Resources</b>
-
-I modified an existing CloudFormation stack to update EC2 instance configurations and validate the changes.
-
-<p align="center">
-  <img src="https://i.imgur.com/mPwGJ4m.png" alt="Screenshot description" width="80%" />
-</p>
-
-## 💡 Technologies & Tools Used
-
-- **AWS CloudFormation**
-- **Amazon S3**
-- **Amazon EC2**
-- **VPC**
-- **Infrastructure as Code (IaC)**
-- **AWS Console**
-
-## 📌 Summary
-
-This project gave me practical, hands-on experience in deploying secure and manageable cloud infrastructure using AWS services. It reinforced the importance of automation, consistency, and resource lifecycle management in real-world cloud environments.
-
-
-
-
-
+- Add architecture diagrams for each project
+- Add Terraform `tfsec` / `checkov` pipeline
+- Add a Security Hub + EventBridge alerting mini-project
+- Add a Kubernetes security mini-lab (EKS + OPA/Gatekeeper)

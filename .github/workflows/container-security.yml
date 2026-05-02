@@ -1,0 +1,29 @@
+name: Container Security Scan
+
+on:
+  push:
+    paths:
+      - "projects/container-security-ci/**"
+      - ".github/workflows/container-security.yml"
+  pull_request:
+    paths:
+      - "projects/container-security-ci/**"
+      - ".github/workflows/container-security.yml"
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t cloud-sec-demo:latest projects/container-security-ci
+      - name: Trivy scan
+        uses: aquasecurity/trivy-action@0.24.0
+        with:
+          image-ref: cloud-sec-demo:latest
+          format: table
+          exit-code: 1
+          severity: CRITICAL,HIGH
